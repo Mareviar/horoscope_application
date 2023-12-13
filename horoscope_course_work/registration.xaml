@@ -1,0 +1,35 @@
+﻿<Page x:Class="horoscope_course_work.registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:horoscope_course_work"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="registration">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Height="601" Margin="-52,-24,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="852" Source="C:\Users\Huawei_\source\repos\horoscope_course_work\horoscope_course_work\bin\Debug\net6.0-windows\media\sky.jpg" Opacity="0.8">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+
+        <TextBox x:Name="log" HorizontalAlignment="Left" Height="38" Margin="160,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="20"/>
+        <Button x:Name="log_in" Content="Зарегистрироваться" HorizontalAlignment="Left" Height="42" Margin="103,339,0,0" VerticalAlignment="Top" Width="208" Click="log_in_Click" FontSize="20" Cursor="Hand"/>
+        <PasswordBox x:Name="pas" HorizontalAlignment="Left" Height="40" Margin="160,119,0,0" VerticalAlignment="Top" Width="240"/>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="160,11,0,0" TextWrapping="Wrap" Text="Введите имя пользовате" VerticalAlignment="Top" Width="154" FontSize="18" Foreground="White"/>
+        <PasswordBox x:Name="pas_Copy" HorizontalAlignment="Left" Height="40" Margin="160,0,0,0" VerticalAlignment="Center" Width="240"/>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="160,90,0,0" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top" Width="154" FontSize="18" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="160,176,0,0" TextWrapping="Wrap" Text="Повторите пароль" VerticalAlignment="Top" Width="154" FontSize="18" Foreground="White"/>
+        <Button x:Name="back" Content="Отмена" HorizontalAlignment="Left" Height="42" Margin="316,339,0,0" VerticalAlignment="Top" Width="140" Click="back_Click" RenderTransformOrigin="0.49,0.596" FontSize="20" Cursor="Hand"/>
+        <TextBlock x:Name="error" HorizontalAlignment="Left" Height="28" Margin="160,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" FontSize="16" Foreground="Red"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="160,245,0,0" TextWrapping="Wrap" Text="Введите знак зодиака" VerticalAlignment="Top" Width="182" FontSize="18" Foreground="White"/>
+        <TextBox x:Name="sign" HorizontalAlignment="Left" Height="40" Margin="160,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" TextChanged="TextBox_TextChanged"/>
+
+    </Grid>
+</Page>

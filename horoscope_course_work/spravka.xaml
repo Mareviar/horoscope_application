@@ -1,0 +1,29 @@
+﻿<Page x:Class="horoscope_course_work.spravka"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:horoscope_course_work"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="spravka">
+
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="601" Margin="-52,-24,0,0" VerticalAlignment="Top" Width="852" Source="C:\Users\Huawei_\source\repos\horoscope_course_work\horoscope_course_work\bin\Debug\net6.0-windows\media\sky.jpg" Opacity="0.5">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+        <ScrollViewer HorizontalAlignment="Left" Height="367" Margin="10,10,0,0" VerticalAlignment="Top" Width="583">
+            <RichTextBox Height="920" Width="564" TextChanged="RichTextBox_TextChanged">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </ScrollViewer>
+        <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="41" Margin="10,382,0,0" VerticalAlignment="Top" Width="129" Click="back_Click" FontSize="22"/>
+
+    </Grid>
+</Page>

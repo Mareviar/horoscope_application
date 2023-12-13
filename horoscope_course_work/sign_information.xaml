@@ -1,0 +1,44 @@
+﻿<Page x:Class="horoscope_course_work.sign_information"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:horoscope_course_work"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="sign_information">
+
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="601" Margin="-62,-43,0,0" VerticalAlignment="Top" Width="852" Source="C:\Users\Huawei_\source\repos\horoscope_course_work\horoscope_course_work\bin\Debug\net6.0-windows\media\sky.jpg" Opacity="0.4">
+            <Image.Effect>
+                <BlurEffect/>
+            </Image.Effect>
+        </Image>
+        <Button x:Name="oven" Content="Овен" HorizontalAlignment="Left" Height="43" Margin="10,12,0,0" VerticalAlignment="Top" Width="115" Click="oven_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="telec" Content="Телец" HorizontalAlignment="Left" Height="45" Margin="148,131,0,0" VerticalAlignment="Top" Width="115" Click="telec_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="twins" Content="Близнецы" HorizontalAlignment="Left" Height="43" Margin="148,72,0,0" VerticalAlignment="Top" Width="115" Click="twins_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="rak" Content="Рак" HorizontalAlignment="Left" Height="43" Margin="148,12,0,0" VerticalAlignment="Top" Width="115" Click="rak_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="leo" Content="Лев" HorizontalAlignment="Left" Height="42" Margin="10,72,0,0" VerticalAlignment="Top" Width="115" Click="leo_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="deva" Content="Дева" HorizontalAlignment="Left" Height="44" Margin="10,131,0,0" VerticalAlignment="Top" Width="115" Click="deva_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="vesi" Content="Весы" HorizontalAlignment="Left" Height="43" Margin="10,191,0,0" VerticalAlignment="Top" Width="115" Click="vesi_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="scorpio" Content="Скорпион" HorizontalAlignment="Left" Height="43" Margin="10,251,0,0" VerticalAlignment="Top" Width="115" Click="scorpio_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="str" Content="Стрелец" HorizontalAlignment="Left" Height="42" Margin="10,311,0,0" VerticalAlignment="Top" Width="115" Click="str_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="kozerog" Content="Козерог" HorizontalAlignment="Left" Height="42" Margin="148,311,0,0" VerticalAlignment="Top" Width="115" Click="kozerog_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <Button x:Name="vodol" Content="Водолей" HorizontalAlignment="Left" Height="44" Margin="148,191,0,0" VerticalAlignment="Top" Width="115" Click="vodol_Click" Foreground="White" FontSize="22" Cursor="Hand" />
+        <Button x:Name="fish" Content="Рыбы" HorizontalAlignment="Left" Height="44" Margin="148,251,0,0" VerticalAlignment="Top" Width="115" Click="fish_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+        <GridSplitter HorizontalAlignment="Left" Height="430" Margin="263,0,0,0" VerticalAlignment="Center" Width="5" RenderTransformOrigin="0.5,0.5">
+            <GridSplitter.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GridSplitter.RenderTransform>
+        </GridSplitter>
+        <ScrollViewer HorizontalAlignment="Left" Height="430" Margin="273,0,0,0" VerticalAlignment="Center" Width="325">
+            <TextBlock x:Name="descr" Height="826" FontSize="13" Foreground="#FFFCFCFC"/>
+        </ScrollViewer>
+        <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="31" Margin="10,374,0,0" VerticalAlignment="Top" Width="104" Click="back_Click" Foreground="White" FontSize="22" Cursor="Hand"/>
+    </Grid>
+</Page>

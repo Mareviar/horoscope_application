@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.IO;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace horoscope_course_work
 {
@@ -112,7 +107,7 @@ namespace horoscope_course_work
 
 
                 string a = Regex.Unescape(body);
-                a = a.Substring(76);
+                a = a.Substring(70);
                 int num = a.Length;
                 Translate(a, num);
             }
@@ -192,6 +187,7 @@ namespace horoscope_course_work
             }
             string a = Regex.Unescape(body);
             a = a.Substring(num + 95);
+            a = a.Replace("}", "");
             describe.Text = a;
         }   // translation to ru
 

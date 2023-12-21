@@ -29,11 +29,12 @@ namespace horoscope_course_work
 
         public int hash_(string pass)
         {
-            int hash = 0;
+            int num = 0;
             for (int i = 0; i < pass.Length; i++)
             {
-                hash += pass[i];
+                num += pass[i];
             }
+            int hash = ((num * 7) % (num * 3)) + 'b' + 'a' + 'v';
             return hash;
         }
 

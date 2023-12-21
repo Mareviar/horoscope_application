@@ -23,7 +23,6 @@
         </ScrollViewer>
         <TextBlock x:Name="wait" HorizontalAlignment="Left" Height="37" Margin="83,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="257" Foreground="White"/>
         <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="107" Click="back_Click" Foreground="White" Cursor="Hand"/>
-        <TextBlock x:Name="question_num" HorizontalAlignment="Left" Height="34" Margin="83,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="433" Foreground="White" FontSize="16"/>
 
     </Grid>
 </Page>

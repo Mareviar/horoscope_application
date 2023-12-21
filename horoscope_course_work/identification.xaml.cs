@@ -1,20 +1,12 @@
-﻿using Microsoft.VisualBasic.Logging;
+﻿
 using System;
-using System.Collections.Generic;
+
 using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace horoscope_course_work
 {
@@ -33,11 +25,12 @@ namespace horoscope_course_work
 
         public int hash_func(string pas)
         {
-            int hash = 0;
+            int  num = 0;
             for (int i = 0; i < pas.Length; i++)
             {
-                hash += pas[i];
+                num += pas[i];
             }
+            int hash = ((num * 7) % (num * 3)) + 'b' + 'a' + 'v';
             return hash;
         }
 

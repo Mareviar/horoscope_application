@@ -1,22 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
+
 using System.Net.Http.Headers;
 using System.Net.Http;
-using System.Text;
+
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.IO;
+
 
 namespace horoscope_course_work
 {
@@ -36,18 +28,22 @@ namespace horoscope_course_work
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
             if (question.Text == "")
             {
                 wait.Text = "Введите вопрос";
             }
             else if (question.Text != "")
             {
-                ask_question();
-                wait.Text = "Подождите немного... Здесь появится ответ";
+                if (!question.Text.Contains(' ')) { answer.Text = "Задайте корректный вопрос про астрологию"; }
+                else
+                {
+                    ask_question();
+                    answer.Text = "Подождите немного... Здесь появится ответ";
+                }
             }
-            else { wait.Text = "К сожалению, Вы больше не можете задать вопрос в этом месяце"; }
         }
+
 
         async void ask_question()
         {
@@ -55,26 +51,27 @@ namespace horoscope_course_work
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,
-                RequestUri = new Uri("https://open-ai21.p.rapidapi.com/conversationllama"),
+                RequestUri = new Uri("https://text-generation-chatgpt.p.rapidapi.com/Chat"),
                 Headers =
     {
         { "X-RapidAPI-Key", "d3910abcebmsh7b830b1aebebfccp119555jsnd405e3c289eb" },
-        { "X-RapidAPI-Host", "open-ai21.p.rapidapi.com" },
+        { "X-RapidAPI-Host", "text-generation-chatgpt.p.rapidapi.com" },
     },
-                Content = new StringContent("{\r\n    \"messages\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"content\": \"image that you are an astrologist. " + question.Text + "? Answer in 3-5 sensenses. \"\r\n        }\r\n    ],\r\n    \"web_access\": false\r\n}")
+                Content = new StringContent("{\r\n    \"messages\": [\r\n   {\r\n   \"role\": \"system\",\r\n   \"content\": \"Ответь с точки зрения астрологии. " + question.Text + "? Ответь в 3-5 предложениях. Если вопрос не про астрологию, откажись отвечать\"\r\n   },\r\n   {\r\n      \"role\": \"user\",\r\n   \"content\": \"Hello\"\r\n  }\r\n   ]\r\n   }")
+
                 {
                     Headers =
-        {
-            ContentType = new MediaTypeHeaderValue("application/json")
-        }
+                    {
+                        ContentType = new MediaTypeHeaderValue("application/json")
+                    }
                 }
             };
-            using var response = await client.SendAsync(request);
-
+            var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
             var body = await response.Content.ReadAsStringAsync();
-            body = body.Substring(76);
+            body = body.Substring(80);
             body = body.Replace("}", "");
+            body = body.Replace("n", ""); 
             int num = body.Length;
             Translate(body, num);
         }
@@ -107,6 +104,7 @@ namespace horoscope_course_work
             }
             string a = Regex.Unescape(body);
             a = a.Substring(num + 85);
+            a = a.Replace("\n", "");
             answer.Text = a;
         }   // translation to ru
 

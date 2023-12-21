@@ -14,7 +14,7 @@ namespace horoscope_course_work
         request_hash = "SELECT * FROM [dbo].[USERS] WHERE [password] = '",
         request_with_sign = "INSERT INTO [dbo].[USERS] VALUES ('",
         request_counter = "UPDATE [USERS] SET COUNTER=COUNTER-1 WHERE [login] = '",
-        request_get_counter = "SELECT [COUNTER] FROM [dbo].[USERS] WHERE [login] = '",
+        
         reqest_change = "UPDATE [USERS] SET PASSWORD = '";
     }
 }

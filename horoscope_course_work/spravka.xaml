@@ -9,21 +9,16 @@
       Title="spravka">
 
     <Grid>
-        <Image HorizontalAlignment="Left" Height="601" Margin="-52,-24,0,0" VerticalAlignment="Top" Width="852" Source="C:\Users\Huawei_\source\repos\horoscope_course_work\horoscope_course_work\bin\Debug\net6.0-windows\media\sky.jpg" Opacity="0.5">
+        <Image HorizontalAlignment="Left" Height="601" Margin="-52,-24,0,0" VerticalAlignment="Top" Width="852" Source="C:\Users\Huawei_\source\repos\horoscope_course_work\horoscope_course_work\bin\Debug\net6.0-windows\media\sky.jpg" Opacity="0.3">
             <Image.Effect>
                 <BlurEffect/>
             </Image.Effect>
         </Image>
-        <ScrollViewer HorizontalAlignment="Left" Height="367" Margin="10,10,0,0" VerticalAlignment="Top" Width="583">
-            <RichTextBox Height="920" Width="564" TextChanged="RichTextBox_TextChanged">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text=""/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
+        <ScrollViewer HorizontalAlignment="Left" Height="330" Margin="10,10,0,0" VerticalAlignment="Top" Width="583">
+            <TextBlock x:Name="spr" Height="1800" TextWrapping="Wrap" Text="" Width="573" Foreground="White" FontSize="14" FontFamily="Consolas"/>
         </ScrollViewer>
-        <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="41" Margin="10,382,0,0" VerticalAlignment="Top" Width="129" Click="back_Click" FontSize="22"/>
+        <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" Height="54" Margin="10,345,0,0" VerticalAlignment="Top" Width="129" Click="back_Click" FontSize="22"/>
+
 
     </Grid>
 </Page>

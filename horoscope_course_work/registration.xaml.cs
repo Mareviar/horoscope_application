@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace horoscope_course_work
 {
@@ -30,11 +22,12 @@ namespace horoscope_course_work
 
         public int hash_(string pas)
         {
-            int hash = 0;
+            int num = 0;
             for (int i = 0; i < pas.Length; i++)
             {
-                hash += pas[i];
+                num += pas[i];
             }
+            int hash = ((num * 7) % (num * 3)) + 'b' + 'a' + 'v';
             return hash;
         }
 
@@ -57,7 +50,7 @@ namespace horoscope_course_work
                                 second_hash = hash_(pas_Copy.Password.ToString());
                                 if (hash == second_hash) // проверка на совпадение паролей
                                 {
-                                    mainWindow.Select(requests.request_with_sign + log.Text + "', '" + hash + "', '" + sign.Text + "', '50')");
+                                    mainWindow.Select(requests.request_with_sign + log.Text + "', '" + hash + "', '" + sign.Text + "')");
 
                                     MessageBox.Show("Пользователь зарегистрирован. Закройте это окно и войдите в систему");
                                     mainWindow.OpenPage(MainWindow.Pages.identification);

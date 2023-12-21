@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
 
 namespace horoscope_course_work
 {
@@ -25,18 +16,15 @@ namespace horoscope_course_work
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            string text = File.ReadAllText("spravka.txt");
+            spr.Text = text;
         }
 
-        private void Spravka()
-        {
-
-        }
-
-        private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e) { }
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.OpenPage(MainWindow.Pages.account);
         }
+
     }
 }

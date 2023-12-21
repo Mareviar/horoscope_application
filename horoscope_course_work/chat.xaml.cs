@@ -36,23 +36,6 @@ namespace horoscope_course_work
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Requests requests = new Requests();
-            string name = File.ReadAllText("describe.txt"), firstName = "";
-            string sqlquery = requests.request_get_counter + name + "'";
-            SqlConnection sqlConnection = new SqlConnection("server=MAREVIAR;Trusted_Connection=Yes;DataBase=PERSONAL_DATA;");
-            sqlConnection.Open();
-            SqlCommand command = new SqlCommand(sqlquery, sqlConnection);
-            using (SqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    firstName = reader["COUNTER"].ToString();
-                }
-            }
-            sqlConnection.Close();
-
-            question_num.Text = "У вас осталось " + firstName + " запросов до конца месяца";
-            mainWindow.Select(requests.request_counter + name + "'");
 
             if (question.Text == "")
             {
@@ -68,7 +51,6 @@ namespace horoscope_course_work
 
         async void ask_question()
         {
-
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {

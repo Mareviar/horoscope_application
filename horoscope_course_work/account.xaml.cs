@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.IO;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -214,11 +209,6 @@ namespace horoscope_course_work
                 else
                 {
                     describe.Text = "Смотрим на звезды...";
-                    Thread.Sleep(500);
-                    describe.Text = "Составляем гороскоп...";
-                    Thread.Sleep(1000);
-                    describe.Text = "Смотрим на звезды...";
-                    Thread.Sleep(1000);
                     Get_horoscope(sign);
                 }
             }
